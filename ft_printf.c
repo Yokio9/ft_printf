@@ -1,69 +1,67 @@
-#include <stdarg.h>
-#include "../libft/libft.h"
+#include "ft_printf.h"
 
-static void	type_to_print(char *dup_format)
-{
-	char	*num;
-	char	*character;
-	char	*hexa;
-
-	num = ft_strdup("diu");
-	character = ft_strdup("cs%");
-	hexa = ft_strdup("pXx");
-	while (*num)
-		if (*dup_format == *num++)
-			ft_putendl_fd("found a num", 1);
-	while (*character)
-		if (*dup_format == *character++)
-			ft_putendl_fd("found a character", 1);
-	while (*hexa)
-		if (*dup_format == *hexa++)
-			ft_putendl_fd("found an hexa", 1);
-}
-
-static int	count_args(char *format)
+static int	count_args(char *form)
 {
 	int	num_args;
-	char *dup_format;
 
 	num_args = 0;
-	dup_format = ft_strdup(format);
-	while (dup_format)
+	while (form)
 	{
-		dup_format = ft_strchr(dup_format, '%');
-		if (!dup_format)
+		form = ft_strchr(form, '%');
+		if (!form)
 			break;
 		num_args++;
-		dup_format++;
-		type_to_print(dup_format);
-		if (*dup_format == '%')
-			dup_format++;
+		form++;
+		if (*form == '%')
+			form++;
 	}
 	return (num_args);
 }
 
-void	ft_printf(char *format, ...)
+void	ft_printf(char *form, ...)
 {
 	va_list	args;
-	int		i;
-	int		j;
+	int	i;
+	int	num;
 
-	i = count_args(format);
-	j = 0;
-	va_start(args, format);
+	i = count_args(form);
+	va_start(args, form);
 	while (i-- > 0)
 	{
-		j = va_arg(args, int);
-		ft_putendl_fd(ft_itoa(j), 1);
+		while (*form != '%')
+		{
+			ft_putchar_fd(*form, 1);
+			form++;
+		}
+		if (*form == '%')
+		{
+			form++;
+			if (*form == 'd' || *form == 'i' || *form == 'u')
+			{
+				num = va_arg(args, int);
+				ft_print_num(*form, num);
+				form++;
+			}
+		}
+
+
+
+		/*if (*form == 'c' || *form == '%')
+			ft_print_char(*form);
+		if (*form == 's')
+			ft_print_str(*form);
+		if (*form == 'X' || *form == 'x')
+			ft_print_hexa(*form);
+		if (*form == 'p')
+			ft_print_adress(*form); */
 	}
 	va_end(args);
 }
 
 int main()
 {
-	int	one = 23;
-	int	two = 6;
-	int	three = 9;
-	ft_printf("%dla%iaj%uef%ckjb%slkb%%bu%pkljbh%Xoizvb%xdf", one, two, three, one, two, three, one, two, three);
+	int	one = 27;
+	int	two = 2024;
+	ft_printf("j'ai eu %d ans en %d\n", one, two);
 	return 0;
 }
