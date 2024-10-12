@@ -22,46 +22,32 @@ void	ft_printf(char *form, ...)
 {
 	va_list	args;
 	int	i;
-	int	num;
+	int	printed;
 
-	i = count_args(form);
+	i = 0;
+	printed = 0;
 	va_start(args, form);
-	while (i-- > 0)
+	while (form[i])
 	{
-		while (*form != '%')
+		if (form[i] == '%')
 		{
-			ft_putchar_fd(*form, 1);
-			form++;
+			i++;
+			printed += ft_print_num(form[i], &args);
 		}
-		if (*form == '%')
-		{
-			form++;
-			if (*form == 'd' || *form == 'i' || *form == 'u')
-			{
-				num = va_arg(args, int);
-				ft_print_num(*form, num);
-				form++;
-			}
-		}
-
-
-
-		/*if (*form == 'c' || *form == '%')
-			ft_print_char(*form);
-		if (*form == 's')
-			ft_print_str(*form);
-		if (*form == 'X' || *form == 'x')
-			ft_print_hexa(*form);
-		if (*form == 'p')
-			ft_print_adress(*form); */
+		else
+			printed += ft_putchar_fd(form[i], 1);
+		i++;
 	}
 	va_end(args);
 }
 
+#include <stdio.h>
 int main()
 {
 	int	one = 27;
-	int	two = 2024;
-	ft_printf("j'ai eu %d ans en %d\n", one, two);
+	int	two = 58;
+	unsigned int three = -345;
+	ft_printf("d: %d i: %i u: %d\n", one, two, three);
+	printf("d: %d i: %i u: %d\n", one, two, three);
 	return 0;
 }
