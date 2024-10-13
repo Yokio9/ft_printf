@@ -1,4 +1,4 @@
-SRCS = ft_printf.c ft_convert_type.c ft_putunbr.c ft_utoa.c
+SRCS = ft_printf.c ft_convert_type.c ft_putunbr.c ft_utoa.c ft_itoa_hexa.c ft_putnbr_hexa.c
 OBJECTS = ${SRCS:.c=.o}
 HEADERS = /libft/libft.h
 CC = gcc

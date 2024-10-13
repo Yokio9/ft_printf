@@ -24,10 +24,9 @@ int	ft_printf(char *format, ...)
 #include <stdio.h>
 int main()
 {
-	char one = 'c';
-	//char two = '%';
-	char *three = "hello";
-	printf("theirs: %d\n", printf("c: %c percentage: %% s: %s\n", one, three));
-	ft_printf("mine: %d\n", ft_printf("c: %c percentage: %% s: %s\n", one, three));
+	int nbr = -42;
+	int *nbr1 = &nbr;
+	printf("theirs: %d\n", printf("1: %p 2: %p\n", &nbr, nbr1));
+	ft_printf("mine: %d\n", ft_printf("1: %p 2: %p\n", &nbr, nbr1));
 	return 0;
 }
