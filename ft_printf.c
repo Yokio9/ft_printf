@@ -24,10 +24,10 @@ int	ft_printf(char *format, ...)
 #include <stdio.h>
 int main()
 {
-	unsigned int	one = 27;
-	unsigned int	two = 58;
-	unsigned int	three = 345;
-	printf("theirs: %d\n", printf("printf u: %u u: %u u: %u\n", one, two, three));
-	ft_printf("mine: %d\n", ft_printf("printf u: %u u: %u u: %u\n", one, two, three));
+	char one = 'c';
+	//char two = '%';
+	char *three = "hello";
+	printf("theirs: %d\n", printf("c: %c percentage: %% s: %s\n", one, three));
+	ft_printf("mine: %d\n", ft_printf("c: %c percentage: %% s: %s\n", one, three));
 	return 0;
 }
