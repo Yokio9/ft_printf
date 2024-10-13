@@ -4,7 +4,9 @@
 #include <stdarg.h>
 #include "libft/libft.h"
 
-int	ft_printf(char *form, ...);
-int	ft_print_num(char letter, va_list *args);
+int		ft_printf(char *form, ...);
+int		ft_convert_type(char letter, va_list *args);
+int		ft_putunbr(unsigned int n);
+char	*ft_utoa(unsigned int n);
 
 #endif
