@@ -8,7 +8,8 @@ int		ft_printf(char *form, ...);
 int		ft_convert_type(char letter, va_list *args);
 int		ft_putunbr(unsigned int n);
 char	*ft_utoa(unsigned int n);
-int		ft_putnbr_hexa(int n);
+int		ft_putnbr_hexa(int n, char type);
 char	*ft_itoa_hexa(int nbr);
+char	*ft_switch_cases(char *str);
 
 #endif

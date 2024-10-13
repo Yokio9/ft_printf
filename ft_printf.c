@@ -24,9 +24,10 @@ int	ft_printf(char *format, ...)
 #include <stdio.h>
 int main()
 {
-	int nbr = -42;
-	int *nbr1 = &nbr;
-	printf("theirs: %d\n", printf("1: %p 2: %p\n", &nbr, nbr1));
-	ft_printf("mine: %d\n", ft_printf("1: %p 2: %p\n", &nbr, nbr1));
+	unsigned int x = 255;
+
+	printf("real: %d\n", (printf("Hex (lower): %x, Hex (upper): %X\n", x, x)));
+	ft_printf("real: %d\n", (ft_printf("Hex (lower): %x, Hex (upper): %X\n", x, x)));
+
 	return 0;
 }
