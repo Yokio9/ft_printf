@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_printf(char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int	i;
@@ -21,13 +21,13 @@ int	ft_printf(char *format, ...)
 	return (printed);
 }
 
+#include <limits.h>
 #include <stdio.h>
 int main()
 {
-	unsigned int x = 255;
-
-	printf("real: %d\n", (printf("Hex (lower): %x, Hex (upper): %X\n", x, x)));
-	ft_printf("real: %d\n", (ft_printf("Hex (lower): %x, Hex (upper): %X\n", x, x)));
+	printf("real: %x ", -9);
+	ft_printf("mine: %x ", -9);
 
 	return 0;
 }
+

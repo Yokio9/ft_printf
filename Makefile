@@ -1,9 +1,9 @@
-SRCS = ft_printf.c ft_convert_type.c ft_putunbr.c ft_utoa.c ft_itoa_hexa.c ft_putnbr_hexa.c
+SRCS = ft_printf.c ft_convert_type.c ft_putunbr.c ft_utoa.c ft_itoa_hexa.c ft_putnbr_hexa.c ft_switch_cases.c ft_putchar.c ft_putstr.c ft_strdup.c ft_strlcpy.c ft_strlen.c ft_putnbr.c ft_itoa.c ft_utoa_hexa.c
 OBJECTS = ${SRCS:.c=.o}
-HEADERS = /libft/libft.h
+HEADERS = ft_printf.h
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = ft_printf.a
+NAME = libftprintf.a
 LIBC = ar rcs
 
 all: ${NAME}
@@ -14,15 +14,12 @@ all: ${NAME}
 ${NAME}: ${OBJECTS}
 	${LIBC} ${NAME} ${OBJECTS}
 
-bonus: ${OBJECTS} ${BOBJECTS}
-	${LIBC} ${NAME} ${BOBJECTS}
-
 clean:
-	rm -f ${OBJECTS} ${BOBJECTS}
+	rm -f ${OBJECTS}
 
 fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
 
-.PHONY: all re clean fclean bonus
+.PHONY: all re clean fclean

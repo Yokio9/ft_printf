@@ -7,7 +7,7 @@ char	*ft_switch_cases(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'A' || str[i] <= 'Z')
+		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
 		i++;
 	}

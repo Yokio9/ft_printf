@@ -14,7 +14,7 @@ int	ft_convert_type(char letter, va_list *args)
 	if (letter == 'd' || letter == 'i')
 		printed += ft_putnbr(va_arg(*args, int));
 	if (letter == 'u')
-		printed += ft_putnbr_hexa(va_arg(*args, int), letter);
+		printed += ft_putunbr(va_arg(*args, unsigned int));
 	if (letter == '%')
 		printed += ft_putchar('%');
 	return (printed);
