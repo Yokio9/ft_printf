@@ -7,6 +7,8 @@ int	ft_putnbr_hexa(int n, char type)
 
 	printed = 0;
 	hexa = ft_utoa_hexa(n);
+	if (!hexa)
+		return (0);
 	if (type == 'x')
 		hexa = ft_switch_cases(hexa);
 	if (type == 'p')

@@ -5,10 +5,10 @@ char	*ft_switch_cases(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (((char *)str)[i])
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
+		if (((char *)str)[i] >= 'A' && ((char *)str)[i] <= 'Z')
+			((char *)str)[i] += 32;
 		i++;
 	}
 	return (str);

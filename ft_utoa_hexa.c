@@ -5,6 +5,8 @@ static int decimal_counter(unsigned int decimal, unsigned int base_amount)
 	unsigned int i;
 
 	i = 0;
+	if (decimal == 0)
+		return (1);
 	while (decimal > 0)
 	{
 		decimal /= base_amount;
@@ -15,16 +17,20 @@ static int decimal_counter(unsigned int decimal, unsigned int base_amount)
 
 static char *decimal_to_hexa(unsigned int decimal, char *base_to)
 {
-	unsigned int counter;
-	unsigned int i;
+	unsigned int	counter;
+	int	i;
+	unsigned int	n;
+	char			*output;
 
 	counter = decimal_counter(decimal, 16);
-	char *output = NULL;
 	output = (char *)malloc(sizeof(char) * (counter));
 	if (!output)
 		return (NULL);
+	n = counter;
+	while (n--)
+		output[n] = 0;
 	i = counter - 1;
-	while (i > 0)
+	while (i >= 0)
 	{
 		output[i] = base_to[decimal % 16];
 		decimal /= 16;
@@ -41,8 +47,9 @@ char *ft_utoa_hexa(unsigned int nbr)
 	char *output;
 
 	if (nbr == 2147483647)
-		return ("7FFFFFFF");
+		return (ft_strdup("7FFFFFFF"));
 	base_to = ft_strdup("0123456789ABCDEF");
 	output = decimal_to_hexa(nbr, base_to);
+	free(base_to);
 	return (output);
 }
