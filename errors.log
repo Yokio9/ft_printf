@@ -1,0 +1,149 @@
+=================================================================
+==13305==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000117 at pc 0x000103a3938e bp 0x7ffeec1a70a0 sp 0x7ffeec1a7098
+WRITE of size 1 at 0x602000000117 thread T0
+    #0 0x103a3938d in decimal_to_hexa ft_utoa_hexa.c:39
+    #1 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #2 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #3 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #4 0x103a36fd2 in ft_printf ft_printf.c:15
+    #5 0x103a03e25 in test_p mandatory.c:46
+    #6 0x103a1824b in main mandatory.c:155
+    #7 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+0x602000000117 is located 0 bytes to the right of 7-byte region [0x602000000110,0x602000000117)
+allocated by thread T0 here:
+    #0 0x10705817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1039f599c in malloc malloc_mock.c:65
+    #2 0x103a391b2 in decimal_to_hexa ft_utoa_hexa.c:26
+    #3 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #4 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #5 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #6 0x103a36fd2 in ft_printf ft_printf.c:15
+    #7 0x103a03e25 in test_p mandatory.c:46
+    #8 0x103a1824b in main mandatory.c:155
+    #9 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ft_utoa_hexa.c:39 in decimal_to_hexa
+For p format:
+Error in test 1: ft_printf("%p", ""): Memory problems!
+     in pf_show_signal_msg pf_utils.c:51:7
+     in pf_sigabort pf_utils.c:69:1
+  -> in decimal_to_hexa ft_utoa_hexa.c:39:18
+     in ft_utoa_hexa ft_utoa_hexa.c:52:9
+     in ft_putnbr_hexa ft_putnbr_hexa.c:9:7
+     in ft_convert_type ft_convert_type.c:13:11
+     in ft_printf ft_printf.c:15:12
+     in test_p mandatory.c:46:2
+     in main mandatory.c:156:2
+
+=================================================================
+==13313==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000111 at pc 0x000103a3938e bp 0x7ffeec1a6e00 sp 0x7ffeec1a6df8
+WRITE of size 1 at 0x602000000111 thread T0
+    #0 0x103a3938d in decimal_to_hexa ft_utoa_hexa.c:39
+    #1 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #2 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #3 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #4 0x103a36fd2 in ft_printf ft_printf.c:15
+    #5 0x103a1029b in test_x mandatory.c:109
+    #6 0x103a1825f in main mandatory.c:159
+    #7 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+0x602000000111 is located 0 bytes to the right of 1-byte region [0x602000000110,0x602000000111)
+allocated by thread T0 here:
+    #0 0x10705817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1039f599c in malloc malloc_mock.c:65
+    #2 0x103a391b2 in decimal_to_hexa ft_utoa_hexa.c:26
+    #3 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #4 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #5 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #6 0x103a36fd2 in ft_printf ft_printf.c:15
+    #7 0x103a1029b in test_x mandatory.c:109
+    #8 0x103a1825f in main mandatory.c:159
+    #9 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ft_utoa_hexa.c:39 in decimal_to_hexa
+For x format:
+Error in test 1: ft_printf("%x", 0): Memory problems!
+     in pf_show_signal_msg pf_utils.c:51:7
+     in pf_sigabort pf_utils.c:69:1
+  -> in decimal_to_hexa ft_utoa_hexa.c:39:18
+     in ft_utoa_hexa ft_utoa_hexa.c:52:9
+     in ft_putnbr_hexa ft_putnbr_hexa.c:9:7
+     in ft_convert_type ft_convert_type.c:13:11
+     in ft_printf ft_printf.c:15:12
+     in test_x mandatory.c:109:2
+     in main mandatory.c:160:2
+
+=================================================================
+==13316==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000111 at pc 0x000103a3938e bp 0x7ffeec1a6e00 sp 0x7ffeec1a6df8
+WRITE of size 1 at 0x602000000111 thread T0
+    #0 0x103a3938d in decimal_to_hexa ft_utoa_hexa.c:39
+    #1 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #2 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #3 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #4 0x103a36fd2 in ft_printf ft_printf.c:15
+    #5 0x103a1452b in test_X mandatory.c:129
+    #6 0x103a18264 in main mandatory.c:160
+    #7 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+0x602000000111 is located 0 bytes to the right of 1-byte region [0x602000000110,0x602000000111)
+allocated by thread T0 here:
+    #0 0x10705817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1039f599c in malloc malloc_mock.c:65
+    #2 0x103a391b2 in decimal_to_hexa ft_utoa_hexa.c:26
+    #3 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #4 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #5 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #6 0x103a36fd2 in ft_printf ft_printf.c:15
+    #7 0x103a1452b in test_X mandatory.c:129
+    #8 0x103a18264 in main mandatory.c:160
+    #9 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ft_utoa_hexa.c:39 in decimal_to_hexa
+For X format:
+Error in test 1: ft_printf("%X", 0): Memory problems!
+     in pf_show_signal_msg pf_utils.c:51:7
+     in pf_sigabort pf_utils.c:69:1
+  -> in decimal_to_hexa ft_utoa_hexa.c:39:18
+     in ft_utoa_hexa ft_utoa_hexa.c:52:9
+     in ft_putnbr_hexa ft_putnbr_hexa.c:9:7
+     in ft_convert_type ft_convert_type.c:13:11
+     in ft_printf ft_printf.c:15:12
+     in test_X mandatory.c:129:2
+     in main mandatory.c:160:2
+
+=================================================================
+==13319==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000117 at pc 0x000103a3938e bp 0x7ffeec1d8300 sp 0x7ffeec1d82f8
+WRITE of size 1 at 0x602000000117 thread T0
+    #0 0x103a3938d in decimal_to_hexa ft_utoa_hexa.c:39
+    #1 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #2 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #3 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #4 0x103a36fd2 in ft_printf ft_printf.c:15
+    #5 0x103a188a9 in main mandatory.c:162
+    #6 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+0x602000000117 is located 0 bytes to the right of 7-byte region [0x602000000110,0x602000000117)
+allocated by thread T0 here:
+    #0 0x10705817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1039f599c in malloc malloc_mock.c:65
+    #2 0x103a391b2 in decimal_to_hexa ft_utoa_hexa.c:26
+    #3 0x103a3914f in ft_utoa_hexa ft_utoa_hexa.c:52
+    #4 0x103a37e4d in ft_putnbr_hexa ft_putnbr_hexa.c:9
+    #5 0x103a3772b in ft_convert_type ft_convert_type.c:13
+    #6 0x103a36fd2 in ft_printf ft_printf.c:15
+    #7 0x103a188a9 in main mandatory.c:162
+    #8 0x7fff6b845cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ft_utoa_hexa.c:39 in decimal_to_hexa
+For random:
+Error in test 1: ft_printf(".\]_u+kFFE%p07;t6,j+,%i%u&zI5qU}"%u,x,.e\tk%d\n`6%p$K%%%p", (void *)7946291617895994881, 426036058, -1945887173, -1271287766, 42057509, (void *)8994923183864389005, (void *)1909849592723930125): Memory problems!
+     in pf_show_signal_msg pf_utils.c:51:7
+     in pf_sigabort pf_utils.c:69:1
+  -> in decimal_to_hexa ft_utoa_hexa.c:39:18
+     in ft_utoa_hexa ft_utoa_hexa.c:52:9
+     in ft_putnbr_hexa ft_putnbr_hexa.c:9:7
+     in ft_convert_type ft_convert_type.c:13:11
+     in ft_printf ft_printf.c:15:12
+     in main mandatory.c:162:2
+
