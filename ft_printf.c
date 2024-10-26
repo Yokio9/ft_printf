@@ -20,8 +20,24 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (printed);
 }
+#include <stdio.h>
 
+int main()
+{
+//    int a = 42;
 
+    printf("Expected: ");
+    printf(" %p ", 1);
+    printf("\n");
+
+    ft_printf("Actual: ");
+    ft_printf(" %p ", 1);
+    ft_printf("\n");
+
+    return 0;
+}
+
+/*
 #include <limits.h>
 #include <stdio.h>
 
@@ -188,7 +204,7 @@ int main()
     ft_printf(" %x ", INT_MIN);
     ft_printf("\n");
 
-/*     printf("Expected: ");
+    printf("Expected: ");
     printf(" %x ", LONG_MAX);
     printf("\n");
     ft_printf("Actual: ");
@@ -235,7 +251,7 @@ int main()
     printf("\n");
     ft_printf("Actual: ");
     ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    ft_printf("\n"); */
+    ft_printf("\n");
 
     printf("Expected: ");
     printf(" %x ", 42);
@@ -253,3 +269,4 @@ int main()
 
     return 0;
 }
+ */

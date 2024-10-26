@@ -20,5 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size);
 size_t	ft_strlen(const char *s);
 char	*ft_itoa(int n);
 int		ft_putnbr(int n);
+char	*ft_itoa_base_printf(unsigned long long value, int base);
+int		ft_putptr(void *ptr);
 
 #endif

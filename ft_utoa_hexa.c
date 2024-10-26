@@ -47,8 +47,8 @@ char *ft_utoa_hexa(unsigned int nbr)
 	char *output;
 
 	if (nbr == 2147483647)
-		return (ft_strdup("7FFFFFFF"));
-	base_to = ft_strdup("0123456789ABCDEF");
+		return (ft_strdup("7fffffff"));
+	base_to = ft_strdup("0123456789abcdef");
 	output = decimal_to_hexa(nbr, base_to);
 	free(base_to);
 	return (output);
