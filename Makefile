@@ -1,4 +1,4 @@
-SRCS = ft_printf.c ft_convert_type.c ft_putunbr.c ft_utoa.c ft_itoa_hexa.c ft_putnbr_hexa.c ft_switch_cases.c ft_putchar.c ft_putstr.c ft_strdup.c ft_strlcpy.c ft_strlen.c ft_putnbr.c ft_itoa.c ft_utoa_hexa.c
+SRCS = ft_printf.c ft_convert_type.c ft_putunbr.c ft_utoa.c ft_itoa_hexa.c ft_putnbr_hexa.c ft_switch_cases.c libft_functions.c ft_putnbr.c ft_itoa.c
 OBJECTS = ${SRCS:.c=.o}
 HEADERS = ft_printf.h
 CC = gcc

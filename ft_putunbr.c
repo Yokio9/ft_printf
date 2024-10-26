@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 int	ft_putunbr(unsigned int n)
 {
@@ -10,3 +10,4 @@ int	ft_putunbr(unsigned int n)
 	free(s);
 	return (printed);
 }
+ */

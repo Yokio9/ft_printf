@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 char	*ft_switch_cases(char *str)
 {
@@ -13,3 +13,4 @@ char	*ft_switch_cases(char *str)
 	}
 	return (str);
 }
+ */

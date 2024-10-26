@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 char	*ft_strdup(const char *src)
 {
@@ -13,3 +13,4 @@ char	*ft_strdup(const char *src)
 		ft_strlcpy(dst, src, ft_strlen(src) + 1);
 	return (dst);
 }
+ */

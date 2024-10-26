@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 {
@@ -16,3 +16,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 	}
 	return (ft_strlen(src));
 }
+ */

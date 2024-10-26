@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 int	ft_convert_type(char letter, va_list *args)
 {
@@ -21,3 +21,4 @@ int	ft_convert_type(char letter, va_list *args)
 		printed += ft_putchar('%');
 	return (printed);
 }
+ */
