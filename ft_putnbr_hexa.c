@@ -20,7 +20,7 @@ int	ft_putnbr_hexa(int n, char type)
 	char	*hexa;
 
 	printed = 0;
-	hexa = ft_strdup(ft_utoa_hexa(n));
+	hexa = ft_utoa_hexa(n);
 	if (!hexa)
 		return (0);
 	if (type == 'X')

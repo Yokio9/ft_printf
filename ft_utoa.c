@@ -23,7 +23,7 @@ static char *decimal_to_hexa(unsigned int decimal, char *base_to)
 	char			*output;
 
 	counter = digit_counter(decimal, 16);
-	output = (char *)malloc(sizeof(char) * (counter));
+	output = (char *)malloc(sizeof(char) * (counter + 1));
 	if (!output)
 		return (NULL);
 	n = counter;
@@ -37,7 +37,6 @@ static char *decimal_to_hexa(unsigned int decimal, char *base_to)
 		i--;
 	}
 	output[counter] = '\0';
-
 	return (output);
 }
 
