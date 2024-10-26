@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_functions.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dimatayi <dimatayi@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 18:17:28 by dimatayi          #+#    #+#             */
+/*   Updated: 2024/10/26 18:17:29 by dimatayi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_putchar(char c)
@@ -5,6 +17,7 @@ int	ft_putchar(char c)
 	write(1, &c, 1);
 	return (1);
 }
+
 int	ft_putstr(char *str)
 {
 	int	i;
@@ -15,7 +28,7 @@ int	ft_putstr(char *str)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	while(str[i])
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;

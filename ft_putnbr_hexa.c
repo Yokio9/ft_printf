@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_hexa.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dimatayi <dimatayi@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 18:16:51 by dimatayi          #+#    #+#             */
+/*   Updated: 2024/10/26 18:16:52 by dimatayi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 char	*ft_switch_cases(char *str)
@@ -29,6 +41,7 @@ int	ft_putnbr_hexa(int n, char type)
 	free(hexa);
 	return (printed);
 }
+
 int	ft_putptr(void *ptr)
 {
 	int		printed;
@@ -43,6 +56,7 @@ int	ft_putptr(void *ptr)
 	free(hexa);
 	return (printed);
 }
+
 int	ft_putunbr(unsigned int n)
 {
 	int		printed;

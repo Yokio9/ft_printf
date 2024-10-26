@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dimatayi <dimatayi@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 18:17:37 by dimatayi          #+#    #+#             */
+/*   Updated: 2024/10/26 18:17:38 by dimatayi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_convert_type(char letter, va_list *args)
@@ -25,8 +37,8 @@ int	ft_convert_type(char letter, va_list *args)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int	i;
-	int	printed;
+	int		i;
+	int		printed;
 
 	i = 0;
 	printed = 0;

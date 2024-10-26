@@ -1,9 +1,21 @@
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dimatayi <dimatayi@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 18:16:31 by dimatayi          #+#    #+#             */
+/*   Updated: 2024/10/26 18:16:32 by dimatayi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 int		ft_printf(const char *form, ...);
 int		ft_convert_type(char letter, va_list *args);

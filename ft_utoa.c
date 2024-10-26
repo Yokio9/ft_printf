@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dimatayi <dimatayi@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 18:14:32 by dimatayi          #+#    #+#             */
+/*   Updated: 2024/10/26 18:14:42 by dimatayi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static int digit_counter(unsigned long long decimal, unsigned int base_amount)
+static int	digit_counter(unsigned long long decimal, unsigned int base_amount)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (decimal == 0)
@@ -15,42 +27,26 @@ static int digit_counter(unsigned long long decimal, unsigned int base_amount)
 	return (i);
 }
 
-static char *decimal_to_hexa(unsigned int decimal, char *base_to)
+char	*ft_utoa_hexa(unsigned int nbr)
 {
-	unsigned int	counter;
-	int	i;
-	unsigned int	n;
-	char			*output;
+	char			*str;
+	char			*base_digits;
+	int				digits;
 
-	counter = digit_counter(decimal, 16);
-	output = (char *)malloc(sizeof(char) * (counter + 1));
-	if (!output)
+	base_digits = "0123456789abcdef";
+	digits = digit_counter(nbr, 16);
+	str = (char *)malloc(digits + 1);
+	if (!str)
 		return (NULL);
-	n = counter;
-	while (n--)
-		output[n] = 0;
-	i = counter - 1;
-	while (i >= 0)
+	str[digits] = '\0';
+	while (digits > 0)
 	{
-		output[i] = base_to[decimal % 16];
-		decimal /= 16;
-		i--;
+		str[--digits] = base_digits[nbr % 16];
+		nbr /= 16;
 	}
-	output[counter] = '\0';
-	return (output);
+	return (str);
 }
 
-char *ft_utoa_hexa(unsigned int nbr)
-{
-	char *base_to;
-	char *output;
-
-	if (nbr == 2147483647)
-		return (ft_strdup("7fffffff"));
-	base_to = "0123456789abcdef";
-	output = decimal_to_hexa(nbr, base_to);
-	return (output);
-}
 char	*ft_utoa(unsigned int n)
 {
 	char			*str;
@@ -61,13 +57,14 @@ char	*ft_utoa(unsigned int n)
 	if (!str)
 		return (NULL);
 	str[digits] = '\0';
-	while (--digits >= 0)
+	while (digits > 0)
 	{
-		str[digits] = n % 10 + '0';
+		str[--digits] = n % 10 + '0';
 		n /= 10;
 	}
 	return (str);
 }
+
 char	*ft_ulltoa_hexa(unsigned long long nbr, int base)
 {
 	char			*str;
