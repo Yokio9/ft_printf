@@ -35,7 +35,7 @@ int	ft_putptr(void *ptr)
 	char	*hexa;
 
 	printed = 0;
-	hexa = ft_itoa_base_printf((unsigned long long)ptr, 16);
+	hexa = ft_ulltoa_hexa((unsigned long long)ptr, 16);
 	if (!hexa)
 		return (0);
 	printed += ft_putstr("0x");

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int digit_counter(unsigned int decimal, unsigned int base_amount)
+static int digit_counter(unsigned long long decimal, unsigned int base_amount)
 {
 	unsigned int i;
 
@@ -47,28 +47,43 @@ char *ft_utoa_hexa(unsigned int nbr)
 
 	if (nbr == 2147483647)
 		return (ft_strdup("7fffffff"));
-	base_to = ft_strdup("0123456789abcdef");
+	base_to = "0123456789abcdef";
 	output = decimal_to_hexa(nbr, base_to);
-	free(base_to);
 	return (output);
 }
 char	*ft_utoa(unsigned int n)
 {
 	char			*str;
 	int				digits;
-	int				i;
 
 	digits = digit_counter(n, 10);
 	str = malloc(sizeof(char) * (digits + 1));
 	if (!str)
 		return (NULL);
-	else
-		i = digits - 1;
-	while (i >= 0)
+	str[digits] = '\0';
+	while (--digits >= 0)
 	{
-		str[i--] = n % 10 + '0';
+		str[digits] = n % 10 + '0';
 		n /= 10;
 	}
+	return (str);
+}
+char	*ft_ulltoa_hexa(unsigned long long nbr, int base)
+{
+	char			*str;
+	char			*base_digits;
+	int				digits;
+
+	base_digits = "0123456789abcdef";
+	digits = digit_counter(nbr, base);
+	str = (char *)malloc(digits + 1);
+	if (!str)
+		return (NULL);
 	str[digits] = '\0';
+	while (digits > 0)
+	{
+		str[--digits] = base_digits[nbr % base];
+		nbr /= base;
+	}
 	return (str);
 }
