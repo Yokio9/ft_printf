@@ -1,18 +1,24 @@
-SRCS = ft_printf.c ft_utoa.c ft_putnbr_hexa.c libft_functions.c ft_itoa.c
+SRCS = ft_printf.c ft_utoa.c ft_putnbr_hexa.c ft_itoa.c ../libft/ft_putchar.c ../libft/ft_putstr.c
 OBJECTS = ${SRCS:.c=.o}
 HEADERS = ft_printf.h
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-NAME = libftprintf.a
 LIBC = ar rcs
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -I.
+LDFLAGS = -fsanitize=address
+NAME = libftprintf.a
+LIBFT_PATH = ../libft
+LIBFT = $(LIBFT_PATH)/libft.a
 
-all: ${NAME}
+all: $(LIBFT) $(NAME)
+
+$(LIBFT):
+	cd $(LIBFT_PATH) && make
+
+$(NAME): $(LIBFT) $(OBJECTS)
+	$(LIBC) $(NAME) $(OBJECTS) $(LIBFT_PATH)/*.o
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o $@
-
-${NAME}: ${OBJECTS}
-	${LIBC} ${NAME} ${OBJECTS}
 
 clean:
 	rm -f ${OBJECTS}
